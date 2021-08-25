@@ -36,7 +36,7 @@ class CollectionExportHelper
                 if ($data['raum_id']==null){
                     $exportData[$key]['raum_id']="";
                 }else{
-                    $exportData[$key]['raum_id']=$raeume[$data['raum_id']-1]['raum'];
+                    $exportData[$key]['raum_id']=$raeume[$data['raum_id']]['raum'];
                 }
             }
         }

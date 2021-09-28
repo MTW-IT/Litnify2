@@ -56,7 +56,7 @@ class MediumController extends Controller
         $med= Medium::create($validatedAttributes);
         $this->storeInventarnummer($request,$med->id);
 
-        if (Auth::user()->berechtigungsrolle_id>3){
+        if (Auth::user()->berechtigungsrolle_id>=3){
             $med->update(['released'=>1]);
         }
 

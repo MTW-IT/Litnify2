@@ -22,11 +22,11 @@ class SearchController extends Controller
         else{
             $ppr=10;
         }
-        if (Cache::has($request->getRequestUri())){
-            $result=Cache::get($request->getRequestUri());
-            $literaturartenCounter=Cache::get($request->getRequestUri().'-litArtCounter');
-        }
-        else {
+        // if (Cache::has($request->getRequestUri())){
+        //     $result=Cache::get($request->getRequestUri());
+        //     $literaturartenCounter=Cache::get($request->getRequestUri().'-litArtCounter');
+        // }
+        // else {
             $result = Suche::getInstance()->search($request);
             $literaturartenCounter = Suche::getInstance()->countLiteraturarten($result);
             $result = extendedFilterSearch::getInstance()->extendedFilterSearch($request, $result);
@@ -35,9 +35,9 @@ class SearchController extends Controller
                 $literaturartenCounter = Suche::getInstance()->countLiteraturarten($result);
             }
 
-            Cache::put($request->getRequestUri(), $result, now()->addMinutes(30));
-            Cache::put($request->getRequestUri().'-litArtCounter', $literaturartenCounter, now()->addMinutes(30));
-        }
+            // Cache::put($request->getRequestUri(), $result, now()->addMinutes(30));
+            // Cache::put($request->getRequestUri().'-litArtCounter', $literaturartenCounter, now()->addMinutes(30));
+        // }
         /* Redirect ohne &page , wenn die Seitenzahl höher wäre, als die Anzahl der eigentlichen Suchtreffer*/
         if ($request->has('page')){
             if ($request->query('page')*10-10 > $result->count()){ // bspw. Paginator Seite 7 (Ergebnisse 61-70), aber nur 50 Ergebnisse

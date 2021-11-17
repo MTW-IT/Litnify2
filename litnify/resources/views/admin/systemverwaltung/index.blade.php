@@ -103,6 +103,22 @@
                             </button>
                         </a>
                     </p>
+                    <div class="card-text">
+                        <form method="POST" action="{{ route('admin.systemverwaltung.testmail') }}">
+                            @csrf
+                            <div class="form-group">
+                                <label for="empfaenger_email">Test E-Mail senden an:</label>
+                                <input required type="email" class="form-control" id="empfaenger_email" name="empfaenger_email" aria-describedby="emailHelp" placeholder="empfaenger@uni-bonn.de">
+                                @error('empfaenger_email')
+                                    <div class="invalid-feedback d-block">{{ $message }}</div>
+                                @enderror
+
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                Testmail senden
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

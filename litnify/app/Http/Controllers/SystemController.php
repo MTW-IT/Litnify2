@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\TableBuilder;
-use App\Models\Auswertung;
+use Carbon\Carbon;
+use App\Mail\Testmail;
 use App\Models\Medium;
 use App\Models\Seiten;
-use Carbon\Carbon;
+use App\Models\Auswertung;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Artisan;
+use App\Helpers\TableBuilder;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Redirect;
 
 class SystemController extends Controller
@@ -113,6 +115,15 @@ class SystemController extends Controller
     public function clearcache(){
         Artisan::call('cache:clear');
         Redirect::back();
+    }
+
+    public function sendTestMail(Request $request)
+    {
+        $validated=$request->validate([
+            'empfaenger_email' => 'required|email'
+        ]);
+        Mail::to($validated['empfaenger_email'])->send(new Testmail);
+        return back();
     }
 
 

@@ -106,7 +106,7 @@ class BestandNachSystematikgruppenComponent extends Component
         $result=collect();
         if (empty($this->sysgrp_inputs)==false){
             foreach ($this->sysgrp_inputs as $sysgrp){
-                $res=Medium::with('inventarliste:inventarnummer')->where('literaturart_id',$this->literaturart)->where('signatur','like','%'.$sysgrp.'%')->get();
+                $res=Medium::with('inventarliste:inventarnummer')->where('deleted',0)->where('literaturart_id',$this->literaturart)->where('signatur','like','%'.$sysgrp.'%')->get();
                 foreach ($res as $item){
                     $result->add($item);
                 }

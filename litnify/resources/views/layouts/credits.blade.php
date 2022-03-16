@@ -40,7 +40,7 @@
                         <p>
                         Ursprünglich handelt es sich bei Litnify um ein Projekt der Hochschule Bonn-Rhein-Sieg
                         für die Abteilung Meteorologie am Institut für Geowissenschaften der Universität Bonn.
-                        Die Teilnehmer des Moduls "Wirtschaftsinformatik-Projekt" der Hochschule Bonn-Rhein-Sieg wurden durch Herrn Prof. Dr. Andreas Hense betreut.</p>
+                        Die Teilnehmer des Moduls "Wirtschaftsinformatik-Projekt" der Hochschule Bonn-Rhein-Sieg wurden durch Herrn <a href="ahense.de" target="_blank">Prof. Dr. Andreas Hense</a> betreut.</p>
                         <p>Modulteilnehmer:</p>
                         <ul>
                             <li>Hassam Bajwa</li>

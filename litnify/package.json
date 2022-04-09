@@ -33,7 +33,7 @@
         "@fortawesome/fontawesome-free": "^5.15.1",
         "daterangepicker": "^3.1.0",
         "font-awesome": "^4.7.0",
-        "moment": "^2.29.1",
+        "moment": "^2.29.2",
         "workbox-routing": "^6.1.2"
     }
 }

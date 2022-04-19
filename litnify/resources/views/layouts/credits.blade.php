@@ -2,7 +2,10 @@
 
 @section('content')
 
-    <div class="card">
+<div class="container">
+  <div class="row">
+    <div class="col">
+       <div class="card">
         <div class="card-header">
             Realisierung und Entwicklung
         </div>
@@ -21,11 +24,9 @@
             </div>
         </div>
     </div>
-
-    <br>
-    <br>
-
-    <div class="card">
+    </div>
+    <div class="col">
+          <div class="card">
         <div class="card-header">
             Planung und Konzeptionierung
         </div>
@@ -57,5 +58,12 @@
             </div>
         </div>
     </div>
+    </div>
+  </div>
+</div>
+
+ 
+
+
 
 @endsection
